@@ -1,5 +1,5 @@
 {% set name = "pyvideoreader" %}
-{% set version = "0.5.5" %}
+{% set version = "0.5.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyvideoreader-{{ version }}.tar.gz
-  sha256: 1ce2336ea121a2f3de2aca886efa525702c0c316782b933f480e371465eecaa8
+  sha256: 3a23f95dcda5047b5e38dceedbbeda0bec0f4be74674accfdb597a442d7641ff
 
 build:
   noarch: python
