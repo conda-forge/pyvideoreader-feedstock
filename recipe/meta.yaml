@@ -29,7 +29,7 @@ test:
     - videoreader
   commands:
     - pip list
-    - curl https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 --output video.mp4
+    - curl https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4 --output video.mp4
     - python -c "from videoreader import VideoReader;vr=VideoReader('video.mp4');print(vr);print(vr[100]);"
   requires:
     - curl
