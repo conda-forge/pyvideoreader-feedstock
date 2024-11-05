@@ -1,5 +1,5 @@
 {% set name = "pyvideoreader" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyvideoreader-{{ version }}.tar.gz
-  sha256: 3a23f95dcda5047b5e38dceedbbeda0bec0f4be74674accfdb597a442d7641ff
+  sha256: f5fafb7760468863f08d2ee1c613a46bec5f2b0ca64af681eb313c66bb08cb47
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ test:
     - videoreader
   commands:
     - pip list
-    - curl https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4 --output video.mp4
+    - curl https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4 --output video.mp4
     - python -c "from videoreader import VideoReader;vr=VideoReader('video.mp4');print(vr);print(vr[100]);"
   requires:
     - curl
