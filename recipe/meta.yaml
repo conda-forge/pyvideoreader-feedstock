@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyvideoreader-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyvideoreader-{{ version }}.tar.gz
   sha256: 3a23f95dcda5047b5e38dceedbbeda0bec0f4be74674accfdb597a442d7641ff
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - flit
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - opencv
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
 
 test:
@@ -34,6 +34,7 @@ test:
   requires:
     - curl
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/postpop/videoreader
